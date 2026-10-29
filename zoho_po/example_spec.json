@@ -1,0 +1,14 @@
+{
+  "vendor_name": "Green Desert Heavy Duty Equipment Repairing & Maintenance L.L.C",
+  "reference_number": "GDQT-12423/2026",
+  "date": "2026-10-29",
+  "line_items": [
+    {
+      "description": "Diesel PM Service - HELI Forklift CPCD30, S/N 010303M1365: engine oil, oil filter, fuel filter and air filter replacement, full check-up, chain lubrication and greasing",
+      "quantity": 1,
+      "rate": 425.00,
+      "tax_percentage": 5
+    }
+  ],
+  "expected_total": 446.25
+}
