@@ -22,7 +22,7 @@ total against the quotation and submits the PO for approval.
    Invoke-RestMethod -Method Post "https://accounts.zoho.com/oauth/v2/token?grant_type=authorization_code&client_id=CLIENT_ID&client_secret=CLIENT_SECRET&code=GRANT_CODE"
    ```
 
-4. **Organization ID**: Zoho Books → Settings → Organization Profile.
+4. **Organization ID**: already set in `config.json` (763466087).
 5. Add these as secrets / environment variables in the Claude cloud environment
    (environment menu → Edit), then start a new session:
 
@@ -31,7 +31,6 @@ total against the quotation and submits the PO for approval.
    | `ZOHO_CLIENT_ID` | Client ID |
    | `ZOHO_CLIENT_SECRET` | Client Secret |
    | `ZOHO_REFRESH_TOKEN` | refresh_token from step 3 |
-   | `ZOHO_ORG_ID` | Organization ID |
 
    If the Zoho account is not on zoho.com, also set `ZOHO_ACCOUNTS_URL` and
    `ZOHO_API_DOMAIN` (the token response in step 3 shows `api_domain`).

@@ -4,7 +4,8 @@ Flow: resolve vendor / location / account / tax by name -> create the PO as a
 draft with the quotation PDF attached -> check the total -> submit for approval.
 
 Credentials come from environment variables (never from files in the repo):
-  ZOHO_CLIENT_ID, ZOHO_CLIENT_SECRET, ZOHO_REFRESH_TOKEN, ZOHO_ORG_ID
+  ZOHO_CLIENT_ID, ZOHO_CLIENT_SECRET, ZOHO_REFRESH_TOKEN
+  ZOHO_ORG_ID       (default: organization_id in config.json)
   ZOHO_ACCOUNTS_URL (default https://accounts.zoho.com)
   ZOHO_API_DOMAIN   (default https://www.zohoapis.com)
 
@@ -34,7 +35,7 @@ def env(name, default=None):
 
 class Zoho:
     def __init__(self):
-        self.org_id = env("ZOHO_ORG_ID")
+        self.org_id = env("ZOHO_ORG_ID", CONFIG.get("organization_id"))
         self.base = env("ZOHO_API_DOMAIN", "https://www.zohoapis.com") + "/books/v3"
         r = requests.post(
             env("ZOHO_ACCOUNTS_URL", "https://accounts.zoho.com") + "/oauth/v2/token",
